@@ -9,8 +9,8 @@ cd ~/
 
 export DEBIAN_FRONTEND=noninteractive
 
-echo -e "${CYAN}---------- ADD REPOSITORY ----------${NC}"
-sudo add-apt-repository ppa:linuxuprising/java
+#echo -e "${CYAN}---------- ADD REPOSITORY ----------${NC}"
+#sudo add-apt-repository ppa:linuxuprising/java
 
 echo 
 echo -e "${CYAN}---------- FIRST UPDATE ----------${NC}"

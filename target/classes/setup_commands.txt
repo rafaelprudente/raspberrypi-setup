@@ -1,6 +1,4 @@
 SOUpdate
 SOUpgrade
-SOEnvironmentVariable ADD DEBIAN_FRONTEND noninteractive
 SOGateway
 APTInstall arp-scan
-SOEnvironmentVariable REMOVE DEBIAN_FRONTEND

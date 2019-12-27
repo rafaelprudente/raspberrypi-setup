@@ -27,12 +27,12 @@ public class APTInstall extends BaseCommand implements ICommand {
 		Process p = null;
 
 		log.debug("OS Name: {}", osName);
+		log.debug("Paremeter 01: {}", command.getParemeter01());
 
 		try {
 			switch (osName.toUpperCase()) {
 			case "UBUNTU":
-				p = Runtime.getRuntime()
-						.exec("apt -yq install " + command.getParemeter01());
+				p = Runtime.getRuntime().exec("apt -yq install " + command.getParemeter01());
 				break;
 			default:
 				break;

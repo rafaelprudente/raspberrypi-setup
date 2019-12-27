@@ -29,9 +29,6 @@ public class CommandHandler {
 		case "APTInstall":
 			APTInstall.class.getDeclaredConstructor().newInstance().run(context, appProperties);
 			break;
-		case "SOEnvironmentVariable":
-			SOEnvironmentVariable.class.getDeclaredConstructor().newInstance().run(context, appProperties);
-			break;
 		default:
 			break;
 		}
