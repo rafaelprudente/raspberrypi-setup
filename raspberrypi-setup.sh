@@ -31,3 +31,18 @@ sudo apt -yq install openjdk-8-jre
 echo 
 echo -e "${CYAN}---------- INSTALL JAVA 11 ----------${NC}"
 sudo apt -yq install openjdk-11-jre
+
+echo 
+echo -e "${CYAN}---------- DOWNLOAD RASPBERRY PI SETUP ----------${NC}"
+sudo curl https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/target/raspberrypi-setup-0.0.1-SNAPSHOT.jar --output raspberrypi-setup.jar
+sudo curl https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/target/classes/raspberry_pi_setup.xml --output raspberry_pi_setup.xml
+sudo curl https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/target/classes/setup_commands.txt --output setup_commands.txt
+
+echo 
+echo -e "${CYAN}---------- BECOME EXECUTABLE ----------${NC}"
+sudo chmod +x raspberrypi-setup.jar
+
+
+echo 
+echo -e "${CYAN}---------- RUNNING ----------${NC}"
+sudo java -jar raspberrypi-setup.jar
