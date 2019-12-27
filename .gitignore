@@ -1,7 +1,10 @@
+target/
+
 # Compiled class file
 *.class
 
 # Log file
+logs/
 *.log
 
 # BlueJ files

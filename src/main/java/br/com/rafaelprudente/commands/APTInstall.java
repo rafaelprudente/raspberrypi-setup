@@ -6,14 +6,15 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import br.com.rafaelprudente.bo.Command;
 import br.com.rafaelprudente.utils.Functions;
 
-public class SOUpdate extends BaseCommand implements ICommand {
-	Logger log = LoggerFactory.getLogger(SOUpdate.class);
+public class APTInstall extends BaseCommand implements ICommand {
+	Logger log = LoggerFactory.getLogger(APTInstall.class);
 
 	@Override
 	public String commandName() {
-		return "UPDATE";
+		return "APT Install";
 	}
 
 	@Override
@@ -21,6 +22,7 @@ public class SOUpdate extends BaseCommand implements ICommand {
 		log.debug("Start - {}", this.getClass().getName());
 		System.out.println("--------------- " + commandName() + " ---------------\n");
 
+		Command command = (Command) context.get("command");
 		String osName = Functions.getOSName();
 		Process p = null;
 
@@ -29,7 +31,8 @@ public class SOUpdate extends BaseCommand implements ICommand {
 		try {
 			switch (osName.toUpperCase()) {
 			case "UBUNTU":
-				p = Runtime.getRuntime().exec("apt -yq update");
+				p = Runtime.getRuntime()
+						.exec("apt -yq install " + command.getParemeter01());
 				break;
 			default:
 				break;
