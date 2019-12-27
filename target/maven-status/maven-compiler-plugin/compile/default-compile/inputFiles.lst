@@ -1,0 +1,14 @@
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\bo\CommandResult.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\commands\CommandException.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\commands\CommandHandler.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\RaspberrypiSetupApplication.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\commands\SOGateway.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\commands\BaseCommand.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\commands\APTInstall.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\commands\SOEnvironmentVariable.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\utils\ConsoleColors.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\bo\Command.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\commands\SOUpgrade.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\utils\Functions.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\commands\SOUpdate.java
+C:\Users\rafae\Documents\GitHub\raspberrypi-setup\src\main\java\br\com\rafaelprudente\commands\ICommand.java

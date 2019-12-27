@@ -27,6 +27,7 @@ sudo apt -yq remove --purge openjdk*
 echo 
 echo -e "${CYAN}---------- INSTALL JAVA 8 ----------${NC}"
 sudo apt -yq install openjdk-8-jre
+
 echo 
 echo -e "${CYAN}---------- INSTALL JAVA 11 ----------${NC}"
 sudo apt -yq install openjdk-11-jre
