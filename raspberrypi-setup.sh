@@ -5,7 +5,7 @@ clear
 CYAN='\033[0;36m'
 NC='\033[0m'
 
-cd ~/
+cd ~/setup
 
 export DEBIAN_FRONTEND=noninteractive
 
@@ -34,21 +34,22 @@ sudo apt -yq install openjdk-11-jre
 
 echo 
 echo -e "${CYAN}---------- DELETE OLD FILES ----------${NC}"
-sudo rm -rf raspberrypi-setup.jar
-sudo rm -rf raspberry_pi_setup.xml
-sudo rm -rf setup_commands.txt
+sudo rm -rf ~/setup/raspberrypi-setup.jar
+sudo rm -rf ~/setup/raspberry_pi_setup.xml
+sudo rm -rf ~/setup/setup_commands.txt
 
 echo 
 echo -e "${CYAN}---------- DOWNLOAD RASPBERRY PI SETUP ----------${NC}"
-sudo curl https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/target/raspberrypi-setup-0.0.1-SNAPSHOT.jar --output raspberrypi-setup.jar
-sudo curl https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/target/classes/raspberry_pi_setup.xml --output raspberry_pi_setup.xml
-sudo curl https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/target/classes/setup_commands.txt --output setup_commands.txt
+sudo curl https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/target/raspberrypi-setup-0.0.1-SNAPSHOT.jar --output ~/setup/raspberrypi-setup.jar
+sudo curl https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/target/classes/raspberry_pi_setup.xml --output ~/setup/raspberry_pi_setup.xml
+sudo curl https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/target/classes/setup_commands.txt --output ~/setup/setup_commands.txt
 
 echo 
 echo -e "${CYAN}---------- BECOME EXECUTABLE ----------${NC}"
-sudo chmod +x raspberrypi-setup.jar
+sudo chmod +x ~/setup/raspberrypi-setup.jar
 
 
 echo 
 echo -e "${CYAN}---------- RUNNING ----------${NC}"
-sudo java -jar raspberrypi-setup.jar
+sudo java -jar ~/setup/raspberrypi-setup.jar
+
