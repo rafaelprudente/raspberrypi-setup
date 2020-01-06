@@ -52,4 +52,3 @@ sudo chmod +x ~/setup/raspberrypi-setup.jar
 echo 
 echo -e "${CYAN}---------- RUNNING ----------${NC}"
 sudo java -jar ~/setup/raspberrypi-setup.jar
-

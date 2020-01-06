@@ -29,6 +29,8 @@ public class APTInstall extends BaseCommand implements ICommand {
 		log.debug("OS Name: {}", osName);
 		log.debug("Paremeter 01: {}", command.getParemeter01());
 
+		System.out.println("--------------- " + command.getParemeter01() + " ---------------\n");
+
 		try {
 			switch (osName.toUpperCase()) {
 			case "UBUNTU":
