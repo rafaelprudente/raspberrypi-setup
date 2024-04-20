@@ -15,4 +15,6 @@ sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 
 echo 
-echo -e "${CYAN}---------- Uninstall Docker Engine ----------${NC}"
+echo -e "${CYAN}---------- Update And Upgrade SO ----------${NC}"
+sudo apt-get update -yq
+sudo apt-get upgrade -yq
