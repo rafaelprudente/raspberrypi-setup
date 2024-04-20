@@ -5,7 +5,8 @@ clear
 CYAN='\033[0;36m'
 NC='\033[0m'
 
-export DEBIAN_FRONTEND=noninteractive
+DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND
 
 echo 
 echo -e "${CYAN}---------- Uninstall Docker Engine ----------${NC}"
