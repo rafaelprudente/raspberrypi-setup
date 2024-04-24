@@ -1,5 +1,8 @@
 ### MAVEN
 target
 
+### VSCODE
+.vscode
+
 ### MACOS
 .DS_Store
