@@ -41,5 +41,17 @@ echo "${CYAN}---------- Install The Docker Packages ----------${NC}"
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -yq
 
 echo 
+echo "${CYAN}---------- Create The Docker Group ----------${NC}"
+sudo groupadd docker
+
+echo 
+echo "${CYAN}---------- Add User To The docker Group ----------${NC}"
+sudo usermod -aG docker $USER
+
+echo 
+echo "${CYAN}---------- Activate The Changes To Groups ----------${NC}"
+newgrp docker
+
+echo 
 echo "${CYAN}---------- Verify installation ----------${NC}"
-sudo docker run hello-world
+docker run hello-world
