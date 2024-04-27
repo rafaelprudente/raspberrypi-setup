@@ -55,11 +55,4 @@ echo "${CYAN}---------- Setting Up Environment Variables ----------${NC}"
 echo 'export PATH=/home/rrps/bin:$PATH' >> ~/.bashrc 
 echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc 
 
-clear
-
-echo 
-echo "${CYAN}---------- Verify installation ----------${NC}"
-sudo netstat -lntp | grep dockerd
-docker run hello-world
-
 sudo reboot
