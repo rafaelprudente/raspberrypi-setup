@@ -47,12 +47,11 @@ sudo groupadd docker
 
 echo 
 echo "${CYAN}---------- Add User To The docker Group ----------${NC}"
-sudo usermod -aG docker $USER
+sudo usermod -aG docker $User
+
+clear
 
 echo 
-echo "${CYAN}---------- Activate The Changes To Groups ----------${NC}"
-sudo newgrp docker
-
-echo 
-echo "${CYAN}---------- Verify installation ----------${NC}"
-docker run hello-world
+echo "${CYAN}---------- Restart System ----------${NC}"
+echo "Use command:"
+echo "sudo shutdown -r now"
