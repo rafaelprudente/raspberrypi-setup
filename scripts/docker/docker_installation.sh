@@ -40,21 +40,20 @@ echo "${CYAN}---------- Install The Docker Packages ----------${NC}"
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -yq
 
 echo 
-echo "${CYAN}---------- Create The Docker Group ----------${NC}"
-sudo groupdel docker
-sudo groupadd docker
+echo "${CYAN}---------- Rootless Configuration ----------${NC}"
+sudo sh -eux <<EOF
+apt-get install -y uidmap
+EOF
+curl -fsSL https://get.docker.com/rootless | sh
 
 echo 
-echo "${CYAN}---------- Add User To The docker Group ----------${NC}"
-sudo adduser $USER docker
+echo "${CYAN}---------- Run Startup Configuration ----------${NC}"
+sudo loginctl enable-linger rrps
 
 echo 
-echo "${CYAN}---------- Remote Access Configuration ----------${NC}"
-sudo mkdir /etc/systemd/system/docker.service.d
-curl -fsSL https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/scripts/docker/override.conf -o /etc/systemd/system/docker.service.d/override.conf
-sudo chmod -R 755 /etc/systemd/system/docker.service.d
-sudo systemctl daemon-reload
-sudo systemctl restart docker.service
+echo "${CYAN}---------- Setting Up Environment Variables ----------${NC}"
+echo 'export PATH=/home/rrps/bin:$PATH' >> ~/.bashrc 
+echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc 
 
 clear
 
@@ -62,3 +61,5 @@ echo
 echo "${CYAN}---------- Verify installation ----------${NC}"
 sudo netstat -lntp | grep dockerd
 docker run hello-world
+
+sudo reboot
