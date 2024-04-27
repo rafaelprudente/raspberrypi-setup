@@ -6,11 +6,11 @@ sudo sh ./docker_installation.sh --dry-run
 
 # Verify installation
 
-:~ $ __sudo netstat -lntp | grep dockerd__
+> __sudo netstat -lntp | grep dockerd__
 
 tcp        0      0 127.0.0.1:2375          0.0.0.0:*               LISTEN      993/dockerd  
 
-:~ $ __docker run hello-world__
+> __docker run hello-world__
 
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
