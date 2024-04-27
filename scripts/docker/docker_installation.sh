@@ -48,6 +48,10 @@ echo
 echo "${CYAN}---------- Add User To The docker Group ----------${NC}"
 sudo adduser $USER docker
 
+echo 
+echo "${CYAN}---------- Remote Access Configuration ----------${NC}"
+sudo adduser $USER docker
+
 clear
 
 echo 
