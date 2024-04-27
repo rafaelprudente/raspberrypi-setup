@@ -50,10 +50,15 @@ sudo adduser $USER docker
 
 echo 
 echo "${CYAN}---------- Remote Access Configuration ----------${NC}"
-sudo adduser $USER docker
+sudo mkdir /etc/systemd/system/docker.service.d
+curl -fsSL https://raw.githubusercontent.com/rafaelprudente/raspberrypi-setup/master/scripts/docker/override.conf -o /etc/systemd/system/docker.service.d/override.conf
+sudo chmod -R 755 /etc/systemd/system/docker.service.d
+sudo systemctl daemon-reload
+sudo systemctl restart docker.service
 
 clear
 
 echo 
 echo "${CYAN}---------- Verify installation ----------${NC}"
+sudo netstat -lntp | grep dockerd
 docker run hello-world
