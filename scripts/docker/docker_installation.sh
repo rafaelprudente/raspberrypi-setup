@@ -8,7 +8,6 @@ NC='\033[0m'
 DEBIAN_FRONTEND=noninteractive
 export DEBIAN_FRONTEND
 
-echo 
 echo "${CYAN}---------- Uninstall Docker Engine ----------${NC}"
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg -yq; done
 sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras -yq
@@ -49,17 +48,8 @@ echo
 echo "${CYAN}---------- Add User To The docker Group ----------${NC}"
 sudo adduser $USER docker
 
-echo 
-echo "${CYAN}---------- Activate The Changes To Groups ----------${NC}"
-sudo newgrp docker
-
 clear
 
 echo 
 echo "${CYAN}---------- Verify installation ----------${NC}"
 docker run hello-world
-
-echo 
-echo "${CYAN}---------- Restart System ----------${NC}"
-echo "Use command:"
-echo "sudo shutdown -r now"
