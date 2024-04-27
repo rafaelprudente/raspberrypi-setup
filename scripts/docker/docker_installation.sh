@@ -42,6 +42,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 echo 
 echo "${CYAN}---------- Create The Docker Group ----------${NC}"
+sudo groupdel docker
 sudo groupadd docker
 
 echo 
@@ -50,7 +51,7 @@ sudo usermod -aG docker $USER
 
 echo 
 echo "${CYAN}---------- Activate The Changes To Groups ----------${NC}"
-newgrp docker
+sudo newgrp docker
 
 echo 
 echo "${CYAN}---------- Verify installation ----------${NC}"
